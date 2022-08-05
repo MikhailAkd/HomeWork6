@@ -1,37 +1,31 @@
+import java.util.Arrays;
+
 public class Main {
-
-    int[] arr = generateRandomArray();
-
-    public static int[] generateRandomArray() {
-        java.util.Random random = new java.util.Random();
-        int[] arr = new int[30];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100_000) + 100_000;
-        }
-        return arr;
-    }
-
     public static void main(String[] args) {
 
         //Задача 1
 
-        float amount =0f;
-        for (int i = 0; i < generateRandomArray().length; i++) {
-            amount = amount + generateRandomArray()[i];
+        int[] accountingBook = new int[] {186823,185988,139779,189756,129339,186526,156887,186804,103403,110241,161590,176116,190060,122634,191505,135234,112615,137904,152744,143749,121136,150106,152750,160676,194439,124266,121945,140876,179051,183639};
+        System.out.println(Arrays.toString(accountingBook));
+        System.out.println();
+
+        float amount = 0f;
+        for (int i : accountingBook) {
+            amount += i;
         }
         System.out.println("Сумма трат за месяц составила " + amount + " рублей");
         System.out.println();
 
         //Задача 2
 
-        int costsPerDayMin = generateRandomArray()[0];
-        int costsPerDayMax = generateRandomArray()[0];
-        for (int i = 0; i < generateRandomArray().length; i++) {
-            if (costsPerDayMin > generateRandomArray()[i]) {
-                costsPerDayMin = generateRandomArray()[i];
+        int costsPerDayMin = accountingBook[0];
+        int costsPerDayMax = accountingBook[0];
+        for (int i : accountingBook) {
+            if (costsPerDayMin > i) {
+                costsPerDayMin = i;
             }
-            if (costsPerDayMax < generateRandomArray()[i]) {
-                costsPerDayMax = generateRandomArray()[i];
+            if (costsPerDayMax < i) {
+                costsPerDayMax = i;
             }
         }
         System.out.println("Минимальная сумма трат за день составила " + costsPerDayMin + " рублей.");
@@ -40,7 +34,7 @@ public class Main {
 
         //Задача 3
 
-        byte daysInMount = 30;
+        int daysInMount = accountingBook.length;
         float averageCosts = amount / daysInMount;
         System.out.println("Средняя сумма трат за месяц составила " + averageCosts + " рублей.");
         System.out.println();

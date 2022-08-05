@@ -9,7 +9,7 @@ public class Main {
         System.out.println(Arrays.toString(accountingBook));
         System.out.println();
 
-        float amount = 0f;
+        int amount = 0;
         for (int i : accountingBook) {
             amount += i;
         }
@@ -34,8 +34,8 @@ public class Main {
 
         //Задача 3
 
-        int daysInMount = accountingBook.length;
-        float averageCosts = amount / daysInMount;
+        int daysInMonth = accountingBook.length;
+        float averageCosts = (float) amount / daysInMonth;
         System.out.println("Средняя сумма трат за месяц составила " + averageCosts + " рублей.");
         System.out.println();
 
